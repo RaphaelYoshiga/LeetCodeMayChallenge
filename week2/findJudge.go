@@ -44,7 +44,3 @@ func findJudge(N int, trust [][]int) int {
 
 	return -1;
 }
-
-func main(){
-	findJudge(3, [][]int{{1,3}, {2,3}})
-}
