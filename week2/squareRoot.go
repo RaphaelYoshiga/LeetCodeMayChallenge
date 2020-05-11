@@ -26,7 +26,3 @@ func sqrt(x float64) (z float64) {
     }
     return
 }
-
-func main(){
-	isPerfectSquare(4)
-}
