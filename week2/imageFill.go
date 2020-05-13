@@ -30,6 +30,3 @@ func fill(image [][]int, x int, y int, newColor int, previousColour int){
 }
 
 
-func main(){
-	floodFill([][]int{{0,0,0}, {0,1,1}}, 1, 1, 1)
-}
