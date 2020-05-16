@@ -55,6 +55,3 @@ func max(a int, b int) int{
 	return b;
 }
 
-func main(){
-	maxSubarraySumCircular([]int {5, -3, 5})
-}
