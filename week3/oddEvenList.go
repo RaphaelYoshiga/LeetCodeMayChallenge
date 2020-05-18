@@ -1,44 +1,59 @@
 package main;
 
+
 func oddEvenList(head *ListNode) *ListNode {
-	current := head;
-	if head == nil || current.Next == nil{
-		return head;
-	}
+    if head == nil { return nil }
+    odd := head
+    evenHead := odd.Next
+    even := evenHead
+    
+    
+    for even != nil && even.Next != nil {
+        odd.Next = even.Next
+        odd = odd.Next
+        even.Next = odd.Next
+        even = even.Next
+    }
+    odd.Next = evenHead
+    return head    
 
-	tailStart := current.Next;
-	var tailEnd *ListNode
-	tailEnd = current.Next;
+}   
 
-	var lastOdd *ListNode
+// func oddEvenList(head *ListNode) *ListNode {
+// 	current := head;
+// 	if head == nil || current.Next == nil{
+// 		return head;
+// 	}
 
-	i := 0;
-	for current != nil {
-		if (i + 1) % 2 == 0{
-			if tailEnd != current{
-				tailEnd.Next = current;
-				tailEnd = current;
-			}
+// 	tailStart := current.Next;
+// 	var tailEnd *ListNode
+// 	tailEnd = current.Next;
 
-			next := current.Next;
+// 	var lastOdd *ListNode
 
-			lastOdd.Next = next;
+// 	i := 0;
+// 	for current != nil {
+// 		if (i + 1) % 2 == 0{
+// 			if tailEnd != current{
+// 				tailEnd.Next = current;
+// 				tailEnd = current;
+// 			}
 
-			current.Next = nil;
-			current = next;
-		}else{
-			lastOdd = current;
-			current = current.Next;
-		}
-		i++;
-	}
-	lastOdd.Next = tailStart;
-    return head;
-}
+// 			next := current.Next;
 
-func main(){
-	oddEvenList(&ListNode { Val: 2, Next: &ListNode{ Val: 1, Next: &ListNode {Val: 3} }});
-}
+// 			lastOdd.Next = next;
+
+// 			current.Next = nil;
+// 			current = next;
+// 		}else{
+// 			lastOdd = current;
+// 			current = current.Next;
+// 		}
+// 		i++;
+// 	}
+// 	lastOdd.Next = tailStart;
+//     return head;
+// }
 
 type ListNode struct {
 	Val int
