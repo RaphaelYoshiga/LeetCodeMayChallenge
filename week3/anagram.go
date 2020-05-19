@@ -43,21 +43,3 @@ func findAnagrams(s string, p string) []int {
 //     }
 //     return hash;
 // }
-
-func main(){
-
-	s:= "";
-	p:="";
-	for i:= 1; i<= 10000; i++{
-		s+="a";
-		p+="a";
-	}
-
-	s+="b";
-	for i:= 1; i<= 10000; i++{
-		s+="a";
-	}
-
-	result:= findAnagrams(s, p);
-	print(result)
-}
