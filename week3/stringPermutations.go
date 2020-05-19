@@ -1,38 +1,65 @@
 package main;
 
 func checkInclusion(s1 string, s2 string) bool {
-	s1Len := len(s1);
+    if len(s1) > len(s2) {
+        return false
+    }
+    
+    countsS1 := [26]int{}
+    for _, c := range s1 {
+        countsS1[c-'a']++
+    }
+    
+    i := 0
+    countsWin := [26]int{}
+    for j := 0; j < len(s2); j++ {
+        countsWin[s2[j]-'a']++
+    
+        if j-i+1 > len(s1) {
+            countsWin[s2[i]-'a']--
+            i++
+        }
 
-	compare := s2[0:s1Len];
-
-	expectedHash := permutationHash(s1);
-	compareHash:= permutationHash(compare);
-	if expectedHash == compareHash{
-		return true;
-	}
-
-	for i := s1Len - 1; i < len(s2); i++{
-
-		remove := compare[0];
-		compare = append(compare[1:], s2[i]);
-		compareHash = compareHash - (remove - 'a' + 1) + (s2[i] - 'a' + 1); 
-
-		if expectedHash == compareHash{
-			return true;
-		}
-	} 
-	return false;
+        if countsS1 == countsWin {
+            return true
+        }
+        
+    }
+    return false
 }
 
-func permutationHash(s string) int{
+// func checkInclusion(s1 string, s2 string) bool {
+// 	s1Len := len(s1);
 
- 	sum := 0;
-	for _, c := range s{
-		sum+= c - 'a' + 1;
-	}
-	return i;
-}
+// 	if s1Len > len(s2){
+// 		return false;
+// 	}
 
-func main(){
-	checkInclusion("aa", "abaa")
-}
+// 	compare := s2[0:s1Len];
+
+// 	expectedHash := hash(s1);
+// 	compareHash:= hash(compare);
+// 	if expectedHash == compareHash{
+// 		return true;
+// 	}
+
+// 	for i := s1Len; i < len(s2); i++{
+
+// 		compare = compare[1:] + string(s2[i]);
+// 		compareHash = hash(compare);
+
+// 		if expectedHash == compareHash{
+// 			return true;
+// 		}
+// 	} 
+// 	return false;
+// }
+
+// var prime = []int {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103};
+// func hash(s string) int{
+//     hash:= 1;
+//     for _, c := range s{
+//         hash *= prime[c - 'a'];
+//     }
+//     return hash;
+// }
