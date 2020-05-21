@@ -18,7 +18,6 @@ func isBalanced(s string) string {
 		if ok {
 			stack = append(stack, c);
 		}else{
-
 			stackLen := len(stack);			
 			if stackLen <= 0{
 				return "NO"
@@ -36,9 +35,4 @@ func isBalanced(s string) string {
 		return "YES"
 	}
 	return "NO";
-}
-
-func main(){
-	result := isBalanced("[(})])}{}}]{({[]]]))]})]");
-	print(result);
 }
