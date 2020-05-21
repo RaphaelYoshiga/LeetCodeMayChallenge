@@ -6,6 +6,7 @@ var (
 )
 
 func getDigits(a int) []int{
+	digitsMap = make(map[int]bool);
 	result := []int {};
 	for a > 0{
 		b := a%10;
