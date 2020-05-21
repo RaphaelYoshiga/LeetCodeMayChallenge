@@ -11,7 +11,7 @@ func countSquares(matrix [][]int) int {
 					value += min(matrix[i-1][y], min(matrix[i-1][y-1], row[y-1]))
 				}
 
-				sum := value;
+				sum += value;
 				row[y] = value;
 			}
 		}
