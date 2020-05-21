@@ -8,6 +8,8 @@ func TestMaxCircularArray(t *testing.T) {
 	}{
 		{ 3245, true},
 		{ 326, false},
+		{ 22, false},
+		{ 44, false},
     }
     
 	for _, table := range tables {
