@@ -60,7 +60,3 @@ func colorfulNumber(a int) bool{
 	used := make([]bool, len(digits));
 	return powerset(digits, used, 0);
 }
-
-func main(){
-	colorfulNumber(326);
-}
