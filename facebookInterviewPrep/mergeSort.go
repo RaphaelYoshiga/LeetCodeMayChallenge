@@ -58,6 +58,3 @@ func mergeHalves(a []int, temp []int, leftStart int, rightEnd int){
 		i++;
 	}
 }
-func main(){
-	mergeSort([]int {4, 3, 2, 1});
-}
