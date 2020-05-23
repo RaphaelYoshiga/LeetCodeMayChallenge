@@ -35,7 +35,3 @@ func frequencySort(s string) string {
 
 	return string(result);
 }
-
-func main(){
-	print(frequencySort("tree"));
-}
