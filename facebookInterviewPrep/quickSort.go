@@ -3,34 +3,33 @@ import (
     "bufio"
     "fmt"
     "io"
-    "os"
-    "strconv"
+
     "strings"
 )
 
-func main() {
+// func main() {
 
-	test := []int{ 5, 8, 1, 3, 7, 9, 2};
-	quickSortWork(test, 0, len(test) -1)
-    reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+// 	test := []int{ 5, 8, 1, 3, 7, 9, 2};
+// 	quickSortWork(test, 0, len(test) -1)
+//     reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
 
-    nTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
-    checkError(err)
-    n := int32(nTemp)
+//     nTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
+//     checkError(err)
+//     n := int32(nTemp)
 
-    arrTemp := strings.Split(readLine(reader), " ")
+//     arrTemp := strings.Split(readLine(reader), " ")
 
-    var arr []int
+//     var arr []int
 
-    for i := 0; i < int(n); i++ {
-        arrItemTemp, err := strconv.ParseInt(arrTemp[i], 10, 64)
-        checkError(err)
-        arrItem := int(arrItemTemp)
-        arr = append(arr, arrItem)
-    }
+//     for i := 0; i < int(n); i++ {
+//         arrItemTemp, err := strconv.ParseInt(arrTemp[i], 10, 64)
+//         checkError(err)
+//         arrItem := int(arrItemTemp)
+//         arr = append(arr, arrItem)
+//     }
 
-    quickSortWork(arr, 0, len(arr) - 1);
-}
+//     quickSortWork(arr, 0, len(arr) - 1);
+// }
 
 func quickSortWork(arr []int, left int, right int){
 	if left >= right{
