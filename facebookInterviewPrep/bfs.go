@@ -13,17 +13,17 @@ func bfs(node *Node, target string) int{
 	
 	frontier := []*Node { node };
 	for len(frontier) > 0{
-		next := []*Node {}
+		nextQueue := []*Node {}
 		for _, u := range frontier{
 			for _, v := range u.Neighbours{
 				_, found := visited[v.Val];
 				if !found {
 					visited[v.Val] = level;
-					next = append(next, v);
+					nextQueue = append(nextQueue, v);
 				}
 			}
 		}
-		frontier = next;
+		frontier = nextQueue;
 		level++;
 	}
 	return visited[target];
