@@ -33,10 +33,6 @@ func flipAndInvertImage(A [][]int) [][]int {
     return A;
 }
 
-func getMiddle(rowLen int){
-	
-}
-
 func flip(a int) int{
 	if a == 1{
 		return 0;
